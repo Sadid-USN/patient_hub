@@ -5,8 +5,13 @@ import 'package:petient_hub/constant/dimensions.dart';
 import 'package:petient_hub/constant/theme/colors.dart';
 
 class AbbBarCustom extends StatelessWidget {
+  final bool isIcon;
   final void Function()? onTap;
-  const AbbBarCustom({Key? key, required this.onTap}) : super(key: key);
+  const AbbBarCustom({
+    Key? key,
+    required this.onTap,
+    this.isIcon = false,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
@@ -46,7 +51,7 @@ class AbbBarCustom extends StatelessWidget {
                 const SizedBox(
                   width: 150,
                 ),
-                SvgPicture.asset(Assets.playIcon),
+                isIcon ? SvgPicture.asset(Assets.playIcon) : const SizedBox(),
               ],
             ),
           ),
