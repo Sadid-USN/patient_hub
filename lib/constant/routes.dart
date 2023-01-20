@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:petient_hub/pages/detail_page.dart';
 import 'package:petient_hub/pages/home_page.dart';
 import 'package:petient_hub/pages/my_appointments_page.dart';
 
@@ -19,5 +20,9 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: MyAppointments.routName,
     page: () => const MyAppointments(),
+  ),
+  GetPage(
+    name: DetailPage.routName,
+    page: () => const DetailPage(),
   ),
 ];
