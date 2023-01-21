@@ -60,7 +60,7 @@ class AppController extends GetxController {
       pageController.animateToPage(selectedIndex,
           duration: const Duration(milliseconds: 300), curve: Curves.ease);
     } else {
-      const MyAppointments();
+      const MyAppointmentsPage();
     }
   }
 
@@ -83,7 +83,7 @@ class AppController extends GetxController {
   PageController pageController = PageController();
   final tabs = [
     const HomePage(),
-    const MyAppointments(),
+    const MyAppointmentsPage(),
   ];
 
   @override

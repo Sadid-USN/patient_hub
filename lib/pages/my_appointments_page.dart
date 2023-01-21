@@ -6,9 +6,9 @@ import 'package:petient_hub/pages/detail_page/detail_page.dart';
 import 'package:petient_hub/widgets/custom_appbar.dart';
 import 'package:petient_hub/widgets/main_card.dart';
 
-class MyAppointments extends StatelessWidget {
+class MyAppointmentsPage extends StatelessWidget {
   static String routName = '/myAppointments';
-  const MyAppointments({Key? key}) : super(key: key);
+  const MyAppointmentsPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     AppController controller = Get.put(AppController());
@@ -44,41 +44,44 @@ class MyAppointments extends StatelessWidget {
           return SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 2 * 1.4,
-                  child: Scrollbar(
-                    radius: const Radius.circular(90),
-                    controller: controller.scrollController,
-                    thumbVisibility: true,
-                    thickness: 8,
-                    child: ListView.builder(
-                        controller: controller.scrollController,
-                        padding: const EdgeInsets.only(
-                          top: 30,
-                          right: 16,
-                          left: 16,
-                        ),
-                        scrollDirection: Axis.vertical,
-                        itemCount: doctorsInfo.length,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onTap: () {
-                              Get.toNamed(DetailPage.routName, arguments: {
-                                'doctorsInfo': doctorsInfo,
-                              });
-                            },
-                            child: MainCard(
-                              index: index,
-                              photo: doctorsInfo[index].photo ?? '',
-                              color: doctorsInfo[index].color ?? '',
-                              name: doctorsInfo[index].doctor ?? '',
-                              profession: doctorsInfo[index].treatment ?? '',
-                              treatment: 'Tedavi',
-                              date: doctorsInfo[index].datetime ?? '',
-                              datetime: doctorsInfo[index].datetime ?? '',
-                            ),
-                          );
-                        }),
+                Padding(
+                  padding: const EdgeInsets.only(right: 5),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height / 2 * 1.4,
+                    child: Scrollbar(
+                      radius: const Radius.circular(90),
+                      controller: controller.scrollController,
+                      thumbVisibility: true,
+                      thickness: 7,
+                      child: ListView.builder(
+                          controller: controller.scrollController,
+                          padding: const EdgeInsets.only(
+                            top: 30,
+                            right: 16,
+                            left: 16,
+                          ),
+                          scrollDirection: Axis.vertical,
+                          itemCount: doctorsInfo.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onTap: () {
+                                Get.toNamed(DetailPage.routName, arguments: {
+                                  'doctorsInfo': doctorsInfo,
+                                });
+                              },
+                              child: MainCard(
+                                index: index,
+                                photo: doctorsInfo[index].photo ?? '',
+                                color: doctorsInfo[index].color ?? '',
+                                name: doctorsInfo[index].doctor ?? '',
+                                profession: doctorsInfo[index].treatment ?? '',
+                                treatment: 'Tedavi',
+                                date: doctorsInfo[index].datetime ?? '',
+                                datetime: doctorsInfo[index].datetime ?? '',
+                              ),
+                            );
+                          }),
+                    ),
                   ),
                 ),
               ],

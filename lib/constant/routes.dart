@@ -18,8 +18,8 @@ List<GetPage<dynamic>>? routes = [
     page: () => const HomePage(),
   ),
   GetPage(
-    name: MyAppointments.routName,
-    page: () => const MyAppointments(),
+    name: MyAppointmentsPage.routName,
+    page: () => const MyAppointmentsPage(),
   ),
   GetPage(
     name: DetailPage.routName,
