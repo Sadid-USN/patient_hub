@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:petient_hub/constant/theme/colors.dart';
 import 'package:petient_hub/controllers/app_controller.dart';
-import 'package:petient_hub/pages/detail_page.dart';
+import 'package:petient_hub/pages/detail_page/detail_page.dart';
 import 'package:petient_hub/widgets/custom_appbar.dart';
 import 'package:petient_hub/widgets/main_card.dart';
 
@@ -46,32 +46,40 @@ class MyAppointments extends StatelessWidget {
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 2 * 1.4,
-                  child: ListView.builder(
-                      padding: const EdgeInsets.only(
-                        top: 30,
-                        right: 16,
-                        left: 16,
-                      ),
-                      scrollDirection: Axis.vertical,
-                      itemCount: doctorsInfo.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Get.toNamed(DetailPage.routName, arguments: {
-                              'doctorsInfo': doctorsInfo,
-                            });
-                          },
-                          child: MainCard(
-                            photo: doctorsInfo[index].photo ?? '',
-                            color: doctorsInfo[index].color ?? '',
-                            name: doctorsInfo[index].doctor ?? '',
-                            profession: doctorsInfo[index].treatment ?? '',
-                            treatment: 'Tedavi',
-                            date: doctorsInfo[index].datetime ?? '',
-                            datetime: doctorsInfo[index].datetime ?? '',
-                          ),
-                        );
-                      }),
+                  child: Scrollbar(
+                    radius: const Radius.circular(90),
+                    controller: controller.scrollController,
+                    thumbVisibility: true,
+                    thickness: 8,
+                    child: ListView.builder(
+                        controller: controller.scrollController,
+                        padding: const EdgeInsets.only(
+                          top: 30,
+                          right: 16,
+                          left: 16,
+                        ),
+                        scrollDirection: Axis.vertical,
+                        itemCount: doctorsInfo.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () {
+                              Get.toNamed(DetailPage.routName, arguments: {
+                                'doctorsInfo': doctorsInfo,
+                              });
+                            },
+                            child: MainCard(
+                              index: index,
+                              photo: doctorsInfo[index].photo ?? '',
+                              color: doctorsInfo[index].color ?? '',
+                              name: doctorsInfo[index].doctor ?? '',
+                              profession: doctorsInfo[index].treatment ?? '',
+                              treatment: 'Tedavi',
+                              date: doctorsInfo[index].datetime ?? '',
+                              datetime: doctorsInfo[index].datetime ?? '',
+                            ),
+                          );
+                        }),
+                  ),
                 ),
               ],
             ),

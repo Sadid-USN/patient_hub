@@ -10,7 +10,7 @@ class AppController extends GetxController {
   bool isLoading = false;
   List<DoctorInfoModel> _doctorsData = [];
   List<DoctorInfoModel> get doctorsData => _doctorsData;
-
+  ScrollController scrollController = ScrollController();
   bool isFirstButtonSelected = true;
   RxString selectedValue = "Geri Bildirim 1".obs;
   void updateSelectedValue(value) => selectedValue = value;

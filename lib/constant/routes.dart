@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:petient_hub/pages/detail_page.dart';
+import 'package:petient_hub/pages/detail_page/detail_page.dart';
 import 'package:petient_hub/pages/home_page.dart';
 import 'package:petient_hub/pages/my_appointments_page.dart';
 

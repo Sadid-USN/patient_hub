@@ -19,7 +19,10 @@ class DropDownButton extends StatelessWidget {
       child: Column(
         children: [
           DropdownButtonFormField(
-            icon: const Icon(Icons.arrow_drop_down_outlined),
+            icon: const Padding(
+              padding: EdgeInsets.only(right: 8),
+              child: Icon(Icons.arrow_drop_down),
+            ),
             value: controller.selectedValue,
             items: controller.dropdownItems,
             onChanged: (value) {

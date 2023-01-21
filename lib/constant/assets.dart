@@ -1,8 +1,6 @@
 class Assets {
-  static const String images =
-      '/Users/myname/flutter_projects/petient_hub/assets/images/';
-  static const String icons =
-      '/Users/myname/flutter_projects/petient_hub/assets/icons/';
+  static const String images = 'assets/images/';
+  static const String icons = 'assets/icons/';
   static const String svg = 'assets/svg/';
 
   static const String mainSvg = '${svg}mainSvg.svg';

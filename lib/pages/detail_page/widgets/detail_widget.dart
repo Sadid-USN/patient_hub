@@ -7,6 +7,7 @@ class DetailItemsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       separatorBuilder: (context, index) {
         return const Padding(

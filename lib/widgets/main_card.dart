@@ -15,6 +15,7 @@ class MainCard extends StatelessWidget {
   final String datetime;
   final String photo;
   final String color;
+  final int index;
 
   const MainCard({
     Key? key,
@@ -25,6 +26,7 @@ class MainCard extends StatelessWidget {
     required this.datetime,
     required this.photo,
     required this.color,
+    required this.index,
   }) : super(key: key);
 
   @override
@@ -114,16 +116,20 @@ class MainCard extends StatelessWidget {
                           width: 6,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(90),
-                            child: const ColoredBox(
-                              color: AppColors.statusColor,
+                            child: ColoredBox(
+                              color: index.isOdd
+                                  ? AppColors.statusColor
+                                  : AppColors.green,
                             ),
                           ),
                         ),
                       ),
-                      const Text(
-                        'Operasyon',
-                        style: headline4,
-                      )
+                      Text(index.isOdd ? 'Operasyon' : "Kontrol",
+                          style: headline4.copyWith(
+                            color: index.isOdd
+                                ? AppColors.statusColor
+                                : AppColors.green,
+                          )),
                     ],
                   ),
                 ),
