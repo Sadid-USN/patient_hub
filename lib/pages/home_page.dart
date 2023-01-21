@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:petient_hub/constant/assets.dart';
-import 'package:petient_hub/widgets/logo_header.dart';
+import 'package:petient_hub/data/local_list_items.dart';
+import 'package:petient_hub/widgets/logo_widget.dart';
 
 class HomePage extends StatelessWidget {
   static String routName = '/homePage';
@@ -16,12 +16,14 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const LogogHeader(),
+              const LogoWidget(),
               ...List.generate(
                 pngImages.length,
                 (index) => Padding(
                   padding: const EdgeInsets.only(top: 10),
-                  child: Image.asset(pngImages[index]),
+                  child: Image.asset(
+                    pngImages[index],
+                  ),
                 ),
               ),
             ],

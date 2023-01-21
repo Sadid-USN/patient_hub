@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:petient_hub/constant/assets.dart';
-import 'package:petient_hub/widgets/logo_header.dart';
+import 'package:petient_hub/data/local_list_items.dart';
+import 'package:petient_hub/widgets/logo_widget.dart';
 
 class BodyWidget extends StatelessWidget {
   const BodyWidget({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class BodyWidget extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              const LogogHeader(),
+              const LogoWidget(),
               ...List.generate(
                 pngImages.length,
                 (index) => Padding(

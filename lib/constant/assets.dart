@@ -7,7 +7,7 @@ class Assets {
 
   static const String mainSvg = '${svg}mainSvg.svg';
   static const String svglogo = '${svg}logo.svg';
-  static const String iconPlus = '${svg}iconPlus.svg';
+  static const String iconPlusSvg = '${svg}iconPlus.svg';
   static const String banner = '${svg}banner.svg';
   static const String playIcon = '${svg}playIcon.svg';
 
@@ -18,10 +18,10 @@ class Assets {
   static const String calendarOnFocus = '${icons}calendar_onfocus.png';
   static const String calendarUnFocus = '${icons}calendar_unfocus.png';
   static const String clock = '${icons}clock.png';
+  static const String iconplus = '${icons}iconplus.png';
+  static const String brownclock = '${icons}brownclock.png';
+  static const String infoicon = '${icons}infoicon.png';
+  static const String idicon = '${icons}idicon.png';
+  static const String docicon = '${icons}docicon.png';
+  static const String bell = '${icons}bell.png';
 }
-
-List<String> pngImages = [
-  Assets.klinik,
-  Assets.klinik,
-  Assets.klinik,
-];

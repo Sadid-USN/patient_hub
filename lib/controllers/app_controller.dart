@@ -12,6 +12,17 @@ class AppController extends GetxController {
   List<DoctorInfoModel> get doctorsData => _doctorsData;
 
   bool isFirstButtonSelected = true;
+  RxString selectedValue = "Geri Bildirim 1".obs;
+  void updateSelectedValue(value) => selectedValue = value;
+
+  final List<DropdownMenuItem<RxString>> dropdownItems = [
+    DropdownMenuItem(
+        value: "Geri Bildirim 1".obs, child: const Text("Geri Bildirim 1")),
+    DropdownMenuItem(
+        value: "Geri Bildirim 2".obs, child: const Text("Geri Bildirim 2")),
+    DropdownMenuItem(
+        value: "Geri Bildirim 3".obs, child: const Text("Geri Bildirim 3")),
+  ];
 
   void onFirstButtonTapped() {
     isFirstButtonSelected = true;

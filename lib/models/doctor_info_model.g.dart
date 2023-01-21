@@ -14,8 +14,8 @@ DoctorInfoModel _$DoctorInfoModelFromJson(Map<String, dynamic> json) =>
       datetime: json['datetime'] as String?,
       type: json['type'] as String?,
       color: json['color'] as String?,
-      feedbackStars: json['feedbackStars'] as String?,
-      feedbackComment: json['feedbackComment'] as String?,
+      feedback_stars: json['feedback_stars'] as String?,
+      feedback_comment: json['feedback_comment'] as String?,
       id: json['id'] as String?,
     );
 
@@ -27,7 +27,7 @@ Map<String, dynamic> _$DoctorInfoModelToJson(DoctorInfoModel instance) =>
       'datetime': instance.datetime,
       'type': instance.type,
       'color': instance.color,
-      'feedbackStars': instance.feedbackStars,
-      'feedbackComment': instance.feedbackComment,
+      'feedback_stars': instance.feedback_stars,
+      'feedback_comment': instance.feedback_comment,
       'id': instance.id,
     };

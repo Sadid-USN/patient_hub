@@ -9,8 +9,8 @@ class DoctorInfoModel {
   String? datetime;
   String? type;
   String? color;
-  String? feedbackStars;
-  String? feedbackComment;
+  String? feedback_stars;
+  String? feedback_comment;
   String? id;
 
   DoctorInfoModel(
@@ -20,8 +20,8 @@ class DoctorInfoModel {
       this.datetime,
       this.type,
       this.color,
-      this.feedbackStars,
-      this.feedbackComment,
+      this.feedback_stars,
+      this.feedback_comment,
       this.id});
 
   factory DoctorInfoModel.fromJson(Map<String, dynamic> json) =>

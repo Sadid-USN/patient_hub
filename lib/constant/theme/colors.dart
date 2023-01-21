@@ -8,6 +8,8 @@ abstract class AppColors {
   static const Color blackDate = Color(0xff181818);
   static const Color headline3 = Color(0xff4B4B4B);
   static const Color statusColor = Color(0xff852727);
+  static const Color gray = Color(0xffEEEEEE);
+  static const Color dropDownColor = Color.fromARGB(255, 240, 242, 252);
 
   static const Color lightGray = Color.fromARGB(255, 238, 237, 237);
 }

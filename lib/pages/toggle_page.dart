@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:petient_hub/constant/dimensions.dart';
 import 'package:petient_hub/constant/theme/colors.dart';
 import 'package:petient_hub/controllers/app_controller.dart';
-import 'package:petient_hub/widgets/iconbuttons/left_icon.dart';
-import 'package:petient_hub/widgets/iconbuttons/right_icon.dart';
+import 'package:petient_hub/widgets/buttons/left_icon.dart';
+import 'package:petient_hub/widgets/buttons/right_icon.dart';
 import 'package:petient_hub/widgets/curve_clipper.dart';
 
 class ToglePage extends StatelessWidget {

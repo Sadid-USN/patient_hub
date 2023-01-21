@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:petient_hub/constant/theme/colors.dart';
 import 'package:petient_hub/controllers/app_controller.dart';
 import 'package:petient_hub/pages/detail_page.dart';
-import 'package:petient_hub/widgets/app_bar.dart';
+import 'package:petient_hub/widgets/custom_appbar.dart';
 import 'package:petient_hub/widgets/main_card.dart';
 
 class MyAppointments extends StatelessWidget {
@@ -17,7 +17,7 @@ class MyAppointments extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.white,
         elevation: 0.0,
-        flexibleSpace: AbbBarCustom(
+        flexibleSpace: CustomAbbBar(
           onTap: () {},
         ),
         centerTitle: true,
@@ -41,46 +41,40 @@ class MyAppointments extends StatelessWidget {
             );
           }
           var doctorsInfo = controller.doctorsData;
-          return Column(
-            children: [
-              SizedBox(
-                height: 700,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.only(
-                      top: 30,
-                      right: 16,
-                      left: 16,
-                    ),
-                    scrollDirection: Axis.vertical,
-                    itemCount: doctorsInfo.length,
-                    itemBuilder: (context, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          Get.toNamed(DetailPage.routName, arguments: {
-                            'photo': 'some_photo',
-                            'color': 'some_color',
-                            'name': 'some_name',
-                            'detail': 'some_detail',
-                          });
-                        },
-                        child: MainCard(
-                          photo: doctorsInfo[index].photo.toString(),
-                          color: doctorsInfo[index].color.toString(),
-                          name: doctorsInfo[index].doctor!,
-                          profession: doctorsInfo[index].treatment!,
-                          treatment: 'Tedavi',
-                          date: controller.getDateFromString(
-                              doctorsInfo[index].datetime ?? '', 0),
-                          datetime: controller
-                              .getDateFromString(
-                                  doctorsInfo[index].datetime ?? '', 1)
-                              .substring(0, 5),
-                        ),
-                      );
-                    }),
-              ),
-            ],
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 2 * 1.4,
+                  child: ListView.builder(
+                      padding: const EdgeInsets.only(
+                        top: 30,
+                        right: 16,
+                        left: 16,
+                      ),
+                      scrollDirection: Axis.vertical,
+                      itemCount: doctorsInfo.length,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            Get.toNamed(DetailPage.routName, arguments: {
+                              'doctorsInfo': doctorsInfo,
+                            });
+                          },
+                          child: MainCard(
+                            photo: doctorsInfo[index].photo ?? '',
+                            color: doctorsInfo[index].color ?? '',
+                            name: doctorsInfo[index].doctor ?? '',
+                            profession: doctorsInfo[index].treatment ?? '',
+                            treatment: 'Tedavi',
+                            date: doctorsInfo[index].datetime ?? '',
+                            datetime: doctorsInfo[index].datetime ?? '',
+                          ),
+                        );
+                      }),
+                ),
+              ],
+            ),
           );
         },
       ),

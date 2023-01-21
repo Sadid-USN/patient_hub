@@ -4,10 +4,10 @@ import 'package:petient_hub/constant/assets.dart';
 import 'package:petient_hub/constant/dimensions.dart';
 import 'package:petient_hub/constant/theme/colors.dart';
 
-class AbbBarCustom extends StatelessWidget {
+class CustomAbbBar extends StatelessWidget {
   final bool isIcon;
   final void Function()? onTap;
-  const AbbBarCustom({
+  const CustomAbbBar({
     Key? key,
     required this.onTap,
     this.isIcon = false,
@@ -37,7 +37,7 @@ class AbbBarCustom extends StatelessWidget {
                   child: GestureDetector(
                     onTap: onTap,
                     child: SvgPicture.asset(
-                      Assets.iconPlus,
+                      Assets.iconPlusSvg,
                     ),
                   ),
                 ),

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:petient_hub/constant/assets.dart';
 import 'package:petient_hub/constant/theme/colors.dart';
 
-class DateAndTimeCard extends StatelessWidget {
+class DatetimeCard extends StatelessWidget {
   final String date;
   final String time;
-  const DateAndTimeCard({
+  const DatetimeCard({
     Key? key,
     required this.date,
     required this.time,
@@ -21,7 +21,10 @@ class DateAndTimeCard extends StatelessWidget {
           height: 50,
           width: 180,
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightGray, width: 1.5),
+            border: Border.all(
+              color: AppColors.lightGray,
+              width: 1.5,
+            ),
             borderRadius: BorderRadius.circular(14),
             color: AppColors.white,
           ),
@@ -36,7 +39,9 @@ class DateAndTimeCard extends StatelessWidget {
               ),
               Text(
                 date,
-                style: headline2.copyWith(color: AppColors.blackDate),
+                style: headline2.copyWith(
+                  color: AppColors.blackDate,
+                ),
               ),
             ],
           ),
@@ -46,7 +51,10 @@ class DateAndTimeCard extends StatelessWidget {
           height: 50,
           width: 145,
           decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightGray, width: 1.5),
+            border: Border.all(
+              color: AppColors.lightGray,
+              width: 1.5,
+            ),
             borderRadius: BorderRadius.circular(14),
             color: AppColors.white,
           ),
@@ -61,7 +69,9 @@ class DateAndTimeCard extends StatelessWidget {
               ),
               Text(
                 time,
-                style: headline2.copyWith(color: AppColors.blackDate),
+                style: headline2.copyWith(
+                  color: AppColors.blackDate,
+                ),
               ),
               const Spacer(
                 flex: 3,

@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:petient_hub/constant/assets.dart';
 import 'package:petient_hub/widgets/curve_clipper.dart';
 
-class LogogHeader extends StatelessWidget {
-  const LogogHeader({Key? key}) : super(key: key);
+class LogoWidget extends StatelessWidget {
+  const LogoWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Stack(
