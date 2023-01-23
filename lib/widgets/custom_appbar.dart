@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:petient_hub/constant/assets.dart';
@@ -21,10 +23,12 @@ class CustomAbbBar extends StatelessWidget {
             ClipPath(
               clipper: AppBarClipper(),
               child: Container(
-                height: 100,
+                height: size.height,
                 color: AppColors.appBarSecondary,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 40, left: 16),
+                  padding: Platform.isIOS
+                      ? const EdgeInsets.only(top: 40, left: 20)
+                      : const EdgeInsets.only(top: 25, left: 20),
                   child: Row(
                     children: [
                       Container(
@@ -33,8 +37,8 @@ class CustomAbbBar extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.circular(Dimensions.iconPlus)),
                         padding: const EdgeInsets.all(5),
-                        height: 35,
-                        width: 35,
+                        height: 32,
+                        width: 32,
                         child: GestureDetector(
                           onTap: onTap,
                           child: SvgPicture.asset(
