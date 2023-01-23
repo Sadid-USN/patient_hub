@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:petient_hub/constant/dimensions.dart';
 import 'package:petient_hub/constant/theme/color_extention.dart';
 import 'package:petient_hub/constant/theme/colors.dart';
 import 'package:petient_hub/controllers/app_controller.dart';
@@ -31,6 +30,7 @@ class MainCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     AppController controller = Get.put(AppController());
     return Container(
       padding: const EdgeInsets.symmetric(
@@ -47,13 +47,13 @@ class MainCard extends StatelessWidget {
         color: color.toColor(0.1),
       ),
       margin: const EdgeInsets.only(bottom: 10),
-      height: Dimensions.heightMainCard,
+      height: size.height / 2 * 0.5,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             padding: const EdgeInsets.all(12),
-            height: Dimensions.heightSecondCard,
+            height: size.height / 2 * 0.3,
             decoration: BoxDecoration(
               border: Border.all(color: AppColors.lightGray, width: 1.5),
               borderRadius: BorderRadius.circular(14),
@@ -97,12 +97,12 @@ class MainCard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 23,
-                  width: 100,
+                  height: size.height / 4 * 0.1,
+                  width: size.width / 2 * 0.5,
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: AppColors.lightGray,
-                      width: 1.5,
+                      width: 1.4,
                     ),
                     borderRadius: BorderRadius.circular(6),
                     color: AppColors.white,
@@ -110,7 +110,7 @@ class MainCard extends StatelessWidget {
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: SizedBox(
                           height: 6,
                           width: 6,
