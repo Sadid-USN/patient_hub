@@ -13,13 +13,14 @@ class DatetimeCard extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
           padding: const EdgeInsets.all(12),
-          height: 50,
-          width: 180,
+          height: size.height * 0.06,
+          width: size.width / 2 * 0.9,
           decoration: BoxDecoration(
             border: Border.all(
               color: AppColors.lightGray,
@@ -29,13 +30,14 @@ class DatetimeCard extends StatelessWidget {
             color: AppColors.white,
           ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 Assets.calendarUnFocus,
                 color: AppColors.black,
               ),
               const SizedBox(
-                width: 16,
+                width: 8,
               ),
               Text(
                 date,
@@ -48,8 +50,8 @@ class DatetimeCard extends StatelessWidget {
         ),
         Container(
           padding: const EdgeInsets.all(12),
-          height: 50,
-          width: 145,
+          height: size.height * 0.06,
+          width: size.width * 0.4,
           decoration: BoxDecoration(
             border: Border.all(
               color: AppColors.lightGray,

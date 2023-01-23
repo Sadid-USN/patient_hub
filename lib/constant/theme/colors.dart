@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppColors {
   static const Color appBarColor = Color(0xff0A4B81);
+  static const Color appBarColorRight = Color(0xff0B4B81);
   static const Color appBarSecondary = Color(0xff0B4B81);
   static const Color white = Color(0xffffffff);
   static const Color black = Color(0xff000000);

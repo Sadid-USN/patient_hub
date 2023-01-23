@@ -15,7 +15,7 @@ class MyAppointmentsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.appBarColorRight.withOpacity(0.9),
         elevation: 0.0,
         flexibleSpace: CustomAbbBar(
           onTap: () {},

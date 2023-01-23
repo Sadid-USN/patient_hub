@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:petient_hub/constant/assets.dart';
 
 import 'package:petient_hub/constant/theme/colors.dart';
 import 'package:petient_hub/controllers/app_controller.dart';
@@ -22,13 +24,19 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.appBarColorRight.withOpacity(0.9),
         elevation: 0.0,
         flexibleSpace: CustomAbbBar(
-          isIcon: true,
           onTap: () {},
         ),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 40),
+            child: GestureDetector(
+                onTap: () {}, child: SvgPicture.asset(Assets.playIcon)),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
