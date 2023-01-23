@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 abstract class AppColors {
   static const Color appBarColor = Color(0xff0A4B81);
-  static const Color appBarColorRight = Color(0xff0B4B81);
-  static const Color appBarSecondary = Color(0xff0B4B81);
+  static const Color appBarColorLeft = Color(0xff0B4B81);
+  static const Color appBarSecondary = Color(0xff084171);
   static const Color white = Color(0xffffffff);
   static const Color black = Color(0xff000000);
   static const Color blackDate = Color(0xff181818);
@@ -38,6 +38,11 @@ const headline2 = TextStyle(
 const headline3 = TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 12,
+    color: AppColors.headline3,
+    overflow: TextOverflow.ellipsis);
+const starsheadline = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 20,
     color: AppColors.headline3,
     overflow: TextOverflow.ellipsis);
 const headline4 = TextStyle(

@@ -11,16 +11,16 @@ class DropDownButton extends StatelessWidget {
     AppController controller = Get.put(AppController());
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14.0),
+        borderRadius: BorderRadius.circular(12.0),
         color: AppColors.dropDownColor,
       ),
-      padding: const EdgeInsets.all(4.0),
-      margin: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.all(0.0),
+      margin: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
         children: [
           DropdownButtonFormField(
             icon: const Padding(
-              padding: EdgeInsets.only(right: 8),
+              padding: EdgeInsets.only(right: 12),
               child: Icon(Icons.arrow_drop_down),
             ),
             value: controller.selectedValue,
@@ -32,7 +32,9 @@ class DropDownButton extends StatelessWidget {
               border: InputBorder.none,
               enabledBorder:
                   const UnderlineInputBorder(borderSide: BorderSide.none),
-              prefixIcon: Image.asset(Assets.bell),
+              prefixIcon: Image.asset(
+                Assets.bell,
+              ),
             ),
           ),
         ],

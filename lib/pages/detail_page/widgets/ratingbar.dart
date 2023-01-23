@@ -7,39 +7,59 @@ class RatingBarStars extends StatelessWidget {
   const RatingBarStars({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        Expanded(
-          flex: 1,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 16),
-            child: RatingBar.builder(
-              initialRating: 3,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: ratingItems.length,
-              itemPadding: const EdgeInsets.symmetric(horizontal: 5.0),
-              itemBuilder: (context, index) => Column(
-                children: [
-                  const Icon(
-                    Icons.star,
-                    color: Colors.amber,
-                    size: 40,
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    ratingItems[index],
-                    style: headline3,
-                  ),
-                ],
+        Padding(
+          padding: const EdgeInsets.only(left: 30),
+          child: Row(
+            children: [
+              RatingBar.builder(
+                initialRating: 5,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: ratingItems.length,
+                itemPadding: const EdgeInsets.symmetric(horizontal: 5.0),
+                itemBuilder: (context, index) => Column(
+                  children: [
+                    const SizedBox(
+                      height: 80,
+                      child: Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                        size: 100,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      ratingItems[index],
+                      style: starsheadline,
+                    ),
+                  ],
+                ),
+                onRatingUpdate: (rating) {},
               ),
-              onRatingUpdate: (rating) {},
-            ),
+            ],
           ),
         ),
+        // Padding(
+        //   padding: const EdgeInsets.only(left: 0.0),
+        //   child: Padding(
+        //     padding: const EdgeInsets.symmetric(horizontal: 0),
+        //     child: Row(
+        //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //       children: [
+        //         for (var i = 0; i < ratingItems.length; i++)
+        //           Text(
+        //             ratingItems[i],
+        //             style: starsheadline,
+        //           ),
+        //       ],
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

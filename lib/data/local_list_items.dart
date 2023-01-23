@@ -20,8 +20,8 @@ List<String> ratingItems = [
 
 List<String> details = [
   'Randevu Id',
-  '26 Nov 2022',
   'Tedavi',
+  'Doctor',
 ];
 List<String> details2 = [
   '2322',
@@ -39,7 +39,7 @@ List<String> pngImages = [
   Assets.klinik,
   Assets.klinik,
 ];
-List<String> detailInfo = [
+List<String> detailIcons = [
   Assets.idicon,
   Assets.infoicon,
   Assets.docicon,

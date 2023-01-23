@@ -24,9 +24,10 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: AppColors.appBarColorRight.withOpacity(0.9),
+        backgroundColor: AppColors.appBarColorLeft,
         elevation: 0.0,
         flexibleSpace: CustomAbbBar(
+          title: 'Randevu Detay',
           onTap: () {},
         ),
         centerTitle: true,
@@ -44,15 +45,14 @@ class DetailPage extends StatelessWidget {
           child: Column(
             children: [
               const TopDetailCard(),
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
               const DetailItemsWidget(),
-              const SizedBox(height: 20),
               const DropDownButton(),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               const RatingBarStars(),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 40),
                 child: Text(
                   doctorsInfo[6].feedback_comment ?? '',
                   style: headline2,

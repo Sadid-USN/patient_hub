@@ -15,9 +15,10 @@ class MyAppointmentsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.appBarColorRight.withOpacity(0.9),
+        backgroundColor: AppColors.appBarColorLeft,
         elevation: 0.0,
         flexibleSpace: CustomAbbBar(
+          title: 'Randevularım',
           onTap: () {},
         ),
         centerTitle: true,
@@ -54,33 +55,34 @@ class MyAppointmentsPage extends StatelessWidget {
                       thumbVisibility: true,
                       thickness: 7,
                       child: ListView.builder(
-                          controller: controller.scrollController,
-                          padding: const EdgeInsets.only(
-                            top: 30,
-                            right: 16,
-                            left: 16,
-                          ),
-                          scrollDirection: Axis.vertical,
-                          itemCount: doctorsInfo.length,
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {
-                                Get.toNamed(DetailPage.routName, arguments: {
-                                  'doctorsInfo': doctorsInfo,
-                                });
-                              },
-                              child: MainCard(
-                                index: index,
-                                photo: doctorsInfo[index].photo ?? '',
-                                color: doctorsInfo[index].color ?? '',
-                                name: doctorsInfo[index].doctor ?? '',
-                                profession: doctorsInfo[index].treatment ?? '',
-                                treatment: 'Tedavi',
-                                date: doctorsInfo[index].datetime ?? '',
-                                datetime: doctorsInfo[index].datetime ?? '',
-                              ),
-                            );
-                          }),
+                        controller: controller.scrollController,
+                        padding: const EdgeInsets.only(
+                          top: 30,
+                          right: 16,
+                          left: 16,
+                        ),
+                        scrollDirection: Axis.vertical,
+                        itemCount: doctorsInfo.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () {
+                              Get.toNamed(DetailPage.routName, arguments: {
+                                'doctorsInfo': doctorsInfo,
+                              });
+                            },
+                            child: MainCard(
+                              index: index,
+                              photo: doctorsInfo[index].photo ?? '',
+                              color: doctorsInfo[index].color ?? '',
+                              name: doctorsInfo[index].doctor ?? '',
+                              profession: doctorsInfo[index].treatment ?? '',
+                              treatment: 'Tedavi',
+                              date: doctorsInfo[index].datetime ?? '',
+                              datetime: doctorsInfo[index].datetime ?? '',
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),

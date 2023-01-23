@@ -1,6 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:petient_hub/constant/dimensions.dart';
 import 'package:petient_hub/constant/theme/colors.dart';
 import 'package:petient_hub/controllers/app_controller.dart';
 import 'package:petient_hub/widgets/buttons/left_icon.dart';
@@ -12,7 +13,8 @@ class ToglePage extends StatelessWidget {
   const ToglePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    Dimensions.init(context);
+    Size size = MediaQuery.of(context).size;
+
     AppController controller = Get.put(AppController());
 
     return Scaffold(
@@ -27,7 +29,8 @@ class ToglePage extends StatelessWidget {
         clipper: BottomCurveClipper(),
         child: Container(
           alignment: Alignment.center,
-          height: Dimensions.bottomSheetHeight,
+          height:
+              Platform.isIOS ? size.height / 4 * 0.6 : size.height / 4 * 0.5,
           color: AppColors.lightGray,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

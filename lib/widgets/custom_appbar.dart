@@ -2,16 +2,18 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:petient_hub/constant/assets.dart';
-import 'package:petient_hub/constant/dimensions.dart';
 import 'package:petient_hub/constant/theme/colors.dart';
 import 'package:petient_hub/widgets/curve_clipper.dart';
 
 class CustomAbbBar extends StatelessWidget {
   final void Function()? onTap;
+  final String title;
   const CustomAbbBar({
     Key? key,
     required this.onTap,
+    required this.title,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -34,8 +36,7 @@ class CustomAbbBar extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                             color: AppColors.white,
-                            borderRadius:
-                                BorderRadius.circular(Dimensions.iconPlus)),
+                            borderRadius: BorderRadius.circular(10.0)),
                         padding: const EdgeInsets.all(5),
                         height: 32,
                         width: 32,
@@ -47,10 +48,10 @@ class CustomAbbBar extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(
-                        width: 16,
+                        width: 8,
                       ),
-                      const Text(
-                        'Randevularım',
+                      Text(
+                        title,
                         style: headline1,
                       ),
                       const SizedBox(
