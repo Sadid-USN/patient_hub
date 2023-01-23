@@ -15,7 +15,7 @@ class RightIcon extends StatelessWidget {
           controller.onSecondButtonTapped();
         },
         child: Container(
-          height: size.height / 6 * 0.4,
+          height: size.height / 5 * 0.4,
           margin: const EdgeInsets.only(top: 8),
           padding: const EdgeInsets.symmetric(
             horizontal: 3,

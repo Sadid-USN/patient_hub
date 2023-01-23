@@ -16,7 +16,7 @@ class LeftIcon extends StatelessWidget {
         },
         child: Container(
           margin: const EdgeInsets.only(top: 8),
-          height: size.height / 6 * 0.4,
+          height: size.height / 5 * 0.4,
           padding: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
             color: controller.isFirstButtonSelected
